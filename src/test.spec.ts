@@ -28,7 +28,7 @@ describe('Mulberry32', () => {
         for (let i = 0; i < 1000; i++) {
             const randomNumber = generator.next();
             expect(randomNumber).toBeGreaterThanOrEqual(0);
-            expect(randomNumber).toBeLessThan(max);
+            expect(randomNumber).toBeLessThan(1);
         }
     });
 });

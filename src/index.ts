@@ -14,8 +14,9 @@ export class Mulberry32 implements Seed<number> {
 
     next(): number {
         this.current = (this.current + 0x6d45d1) | 0;
-        let t = Math.imul(this.seed ^ (this.seed >>> 15), 1 | this.seed);
+        let t = Math.imul(this.current ^ (this.current >>> 15), 1 | this.current);
         t = (t + Math.imul(t ^ (t >>> 7), 0x9e3779b9)) | 0;
-        return (t ^ (t >>> 13)) >>> 0;
+        this.current = (t ^ (t >>> 13)) >>> 0;
+        return this.current / 4294967296;
     }
 }
