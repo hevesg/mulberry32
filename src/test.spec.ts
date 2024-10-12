@@ -23,7 +23,6 @@ describe('Mulberry32', () => {
 
     it('generates numbers within the expected range', () => {
         const generator = new Mulberry32(12345);
-        const max = 2**32;
 
         for (let i = 0; i < 1000; i++) {
             const randomNumber = generator.next();
