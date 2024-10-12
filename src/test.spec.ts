@@ -15,7 +15,6 @@ describe('Mulberry32', () => {
         const generator1 = new Mulberry32(12345);
         const generator2 = new Mulberry32(54321);
 
-        let different = false;
         for (let i = 0; i < 1000; i++) {
             expect(generator1.next()).not.toBe(generator2.next());
         }
